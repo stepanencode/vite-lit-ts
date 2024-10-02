@@ -4,7 +4,11 @@ import './App.css';
 import { LearnLit as LearnLitClass } from './learn-lit.ts';
 import { createComponent } from '@lit/react';
 
-const LearnLit = createComponent(React, 'learn-lit', LearnLitClass);
+export const LearnLit = createComponent({
+  tagName: 'learn-lit',
+  elementClass: LearnLitClass,
+  react: React,
+});
 
 function App() {
   const [count, setCount] = useState(0);
